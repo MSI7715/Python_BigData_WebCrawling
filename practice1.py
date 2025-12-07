@@ -13,3 +13,5 @@ birth_year = int( input("請輸入您的出生國曆年份: ") )
 retiredAge = 65
 retiredYear = birth_year + retiredAge
 print("您的退休年份為", retiredYear)
+
+# 第三個練習 -
