@@ -11,7 +11,7 @@ print("總共需要支付:", total_dinner, "元")
 # 輸入出生國曆年份，輸出自己預計西元幾年退休(65歲)，輸出格式：“您的退休年份為”***"
 birth_year = int( input("請輸入您的出生國曆年份: ") )
 retiredAge = 65
-retiredYear = birth_year + retiredAge
+retiredYear = birth_year + retiredAge + 1911
 print("您的退休年份為", retiredYear)
 
 # 第三個練習 -
