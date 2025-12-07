@@ -40,3 +40,4 @@ dict=[ "a","b,c","d","e",{ "f":[ "g","h" ],"i":"j","k,l":{ "m":[ "n","o","p" ] }
 # 索引出'python'
 dict_result = dict[4]["k,l"]["m"][2] + dict[4]["k,l"]["m"][0] + dict[4]["k,l"]["m"][1] + dict[6][0][2] + dict[6][1][0] + dict[6][2][1]
 print( dict_result )
+
