@@ -36,7 +36,7 @@ month_index = int( input("請輸入月份數字(1-12): ") ) - 1
 print( list_m[ month_index ] + " has", list_d[ month_index ], "days." )
 
 # 第五個練習 - 字典索引
-dict=[ "a","b,c","d","e",{ "f":[ "g","h" ],"i":"j","k,l":{ "m":[ "n","o","p" ] },"q":"r" },"s",[ "t,u","v","w" ],"x","y,z" ]
+dict = [ "a","b,c","d","e",{ "f":[ "g","h" ],"i":"j","k,l":{ "m":[ "n","o","p" ] },"q":"r" },"s",[ "t,u","v","w" ],"x","y,z" ]
 # 索引出'python'
 dict_result = dict[4]["k,l"]["m"][2] + dict[-1][0] + dict[-3][0][0] + dict[4]["f"][1] + dict[4]["k,l"]["m"][1] + dict[4]["k,l"]["m"][0]
 print( dict_result )
