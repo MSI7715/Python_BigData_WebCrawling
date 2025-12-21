@@ -6,3 +6,5 @@ Web Crawling - Beautifulsoup
 Pandas
 Data Visualization
 Data Cleaning
+2025/12/21 - Connect FB API > Data Storage > Data Analysis > Visualization(Tableau) 
+Data Mining > Data Cleaning > Visualization
