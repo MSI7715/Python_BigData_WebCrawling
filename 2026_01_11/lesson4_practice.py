@@ -6,7 +6,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 res = requests.get( 'https://www.1111.com.tw/search/job?page=1&col=ab&sort=desc&ks=%E5%A4%A7%E6%95%B8%E6%93%9A', verify = False )
 soup = BeautifulSoup( res.text )
 print( soup.prettify() )
-'''
+
 print( soup.find_all( "div", class_= "job-card" )[2]("h2")[0].text )
 print( soup.find_all( "div", class_= "job-card" )[2]("h2")[1].text )
 print( soup.find_all( "div", class_= "job-card" )[2]("a")[2].text )
@@ -32,7 +32,7 @@ for jobs in soup.find_all( "div", class_= "job-card" ):
     print( jobs("h4")[0].text )
     print( "https://www.1111.com.tw" + jobs("a")[0]["href"] )
 print( "=" * 50 + ">" )
-'''
+
 # 練習3：印出每一頁的職缺清單直到soup.find為空值(while迴圈)
 page = 1
 while True:
