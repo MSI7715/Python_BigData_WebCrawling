@@ -64,9 +64,11 @@ while soup( "div", class_ = "job-card" ) != [] and page < 15:
             salary_avg *= 21 * 8
         else:
             print( pay_type )
+            continue
         print( "薪資上限(月薪)：", salary_max )
         print( "薪資下限(月薪)：", salary_min )
         print( "平均薪資(月薪)：", salary_avg )
+        print( "=" * 50 )
         ws.append( [ A, B, C, D, E, F, G, H, salary_max, salary_min, salary_avg ] )
     print("page", page)
     page += 1
