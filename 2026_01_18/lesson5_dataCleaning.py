@@ -22,7 +22,6 @@ ws[ "J1" ] = '薪資下限(月薪)'
 ws[ "K1" ] = '薪資平均(月薪)'
 ws[ "L1" ] = '經度'
 ws[ "M1" ] = '緯度'
-wb.save( file_path )
 
 page = 1
 res = requests.get(f'https://www.1111.com.tw/search/job?page={page}&col=ab&sort=desc&ks=%E5%A4%A7%E6%95%B8%E6%93%9A', verify=False)
@@ -71,6 +70,7 @@ while soup( "div", class_ = "job-card" ) != [] and page < 15:
         print( "=" * 50 )
         ws.append( [ A, B, C, D, E, F, G, H, salary_max, salary_min, salary_avg ] )
     print("page", page)
+    # 下一頁的資料
     page += 1
     print()
     res = requests.get(f'https://www.1111.com.tw/search/job?page={page}&col=ab&sort=desc&ks=%E5%A4%A7%E6%95%B8%E6%93%9A', verify=False)
