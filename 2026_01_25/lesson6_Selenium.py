@@ -33,5 +33,3 @@ cookies = json.loads( jscookies )
 for cookie in cookies:
     driver.add_cookie( cookie )
 driver.refresh()
-
-
