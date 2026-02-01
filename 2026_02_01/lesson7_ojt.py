@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
@@ -42,6 +43,23 @@ driver.find_element( By.CSS_SELECTOR, 'button[class="btn-orange"]' ).click()
 webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
 
 # 取得網頁原始碼
-soup = BeautifulSoup( driver.page_source, 'html.parser' )
-print( soup )
-# 取得課程名稱
+soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+# 取得課程名稱(for迴圈找第一頁)
+course_list = soup.find_all( 'td', headers = 'tb1-b' )
+for course in course_list:
+    print( course.a.text.strip() )
+
+# 取得課程網址(for迴圈找出所有頁數的課程內容)
+page_count = 1
+while soup.find( 'a', id = 'nextPage' )['class'] != ['disabled']:
+    print( f"---第 {page_count} 頁---" )
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    course_list = soup.find_all( 'td', headers = 'tb1-b' )
+    for course in course_list:
+        print( course.a.text.strip() )
+
+    driver.find_element(By.XPATH, '//*[text()="下一頁"]').click()
+
+    time.sleep( 2 )
+    page_count += 1
