@@ -44,3 +44,4 @@ webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
 # 取得網頁原始碼
 soup = BeautifulSoup( driver.page_source, 'html.parser' )
 print( soup )
+# 取得課程名稱
