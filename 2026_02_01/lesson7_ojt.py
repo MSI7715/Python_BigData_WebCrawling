@@ -29,7 +29,7 @@ Select( driver.find_element( By.CSS_SELECTOR, 'select[name="Form.FTDATE_YEAR_SHO
 Select( driver.find_element( By.CSS_SELECTOR, 'select[name="Form.FTDATE_MON"]' ) ).select_by_value( '12' )
 
 # CSS_SELECTOR  # main_form > div > div.unit-border > div.submit-bar > button.btn-orange
-# XPATH         # //*[@id="main_form"]/div/div[2]/div[4]/button[1]
+# XPATH         # //*[@id="main_form"]/div/div[2]/div[4]/button[1]   *萬用符號，任意資料都可以
 # FULL XPATH    # /html/body/div[4]/form[1]/div/div[2]/div[4]/button[1]
 # XPath 範例
 # driver.find_element( By.XPATH, '//*[text()="送出"]' ).click()
