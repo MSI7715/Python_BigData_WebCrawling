@@ -37,7 +37,7 @@ print( c.dtype )
 # 讀取圖片
 im = plt.imread('mat.png')
 # x軸、y軸、顏色通道(rgb)
-print( im.shape )
+print( "原圖大小：", im.shape )
 plt.imshow(im)
 plt.show()
 
@@ -58,11 +58,39 @@ plt.imshow(im5)
 plt.show()
 
 h, w = im.shape[0], im.shape[1]
-im6 = im[ h//2: h, :, : ] # 擷取部分圖片(下半部)
+im6 = im[ h//2:h, :w//3, : ] # 擷取部分圖片(下半部)
 plt.imshow(im6)
 plt.show()
 
 ima = np.array( im )
-im7 = np.roll( ima, (500, 300), axis=(1, 0) ) # 圖片平移
+im7 = np.roll( ima, (500, 300, 1), axis=(0, 1, 2) ) # 滾動(目標, 滾動量, 哪個維度)
 plt.imshow(im7)
 plt.show()
+
+im8 = im[ ::2, ::2, :: ] # 降低解析度，每隔一個像素取一個(縮小圖片)
+print( "Image 8尺寸：", im8.shape )
+plt.imshow(im8)
+plt.show()
+
+# 圖片的數值運算，影響亮度，不影響圖片大小
+im9 = im * 0.5
+im10 = im * 2
+plt.imshow(im9.astype('uint8'))  # 設置為8位元整數
+plt.show()
+im10 = np.clip( im10, a_min = None, a_max = 255 )  # rgb範圍0~255，超過255的部分設為255
+plt.imshow(im10.astype('uint8'))
+plt.show()
+
+red = im.copy()
+green = im.copy()
+blue = im.copy()
+red[ :, :, (1, 2) ] = 0 # 將綠色和藍色通道設為0，保留紅色通道 * : = 全部， :: = 反向
+green[ :, :, (0, 2) ] = 0 # 將紅色和藍色通道設為0，保留綠色通道
+blue[ :, :, (0, 1) ] = 0 # 將紅色和綠色通道設為0，保留藍色通道
+con = np.concatenate( [ red, green, blue ], axis = 1 ) # 延伸
+plt.imshow(con)
+plt.show()
+'''
+print("<" + "-" * 20 + ">")
+print(im)
+'''
