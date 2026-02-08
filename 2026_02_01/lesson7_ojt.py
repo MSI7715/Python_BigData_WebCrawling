@@ -41,7 +41,7 @@ Select( driver.find_element( By.CSS_SELECTOR, 'select[name="Form.FTDATE_MON"]' )
 driver.find_element( By.CSS_SELECTOR, 'button[class="btn-orange"]' ).click()
 #driver.find_element( By.CSS_SELECTOR, 'button[class="btn btn-info btn-info-Confirm"]' ).click()
 # 關閉彈跳視窗(Esc)
-webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
+webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()  # ActionChains - 動作鏈，對瀏覽器(driver)送出鍵盤訊號(Esc)
 
 # 取得網頁原始碼
 soup = BeautifulSoup(driver.page_source, 'html.parser')
