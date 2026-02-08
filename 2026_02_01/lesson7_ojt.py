@@ -37,6 +37,7 @@ Select( driver.find_element( By.CSS_SELECTOR, 'select[name="Form.FTDATE_MON"]' )
 #se = Select( driver.find_element( By.CSS_SELECTOR, 'input[name="Form.STDATE_YEAR_SHOW"]' ) )
 #for s in se.options:
 #    print( s.text )
+# driver.find_element( By.XPATH, '//*[text()="送出"]' ).click()
 driver.find_element( By.CSS_SELECTOR, 'button[class="btn-orange"]' ).click()
 #driver.find_element( By.CSS_SELECTOR, 'button[class="btn btn-info btn-info-Confirm"]' ).click()
 # 關閉彈跳視窗(Esc)
